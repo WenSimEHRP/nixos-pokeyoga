@@ -75,6 +75,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # auto store optimization
+  nix.settings.auto-optimise-store = true;
+
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -98,6 +101,12 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 
   services.pipewire = {
     enable = true;
@@ -159,6 +168,13 @@
     enableVirtualCamera = true;
   };
 
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -174,7 +190,7 @@
     rnote
     gh
     vscode-fhs
-    zed-editor
+    zed-editor-fhs
     refine
     aseprite
     krita
@@ -182,8 +198,7 @@
     imagemagick
     nixfmt
     davinci-resolve
-    amberol
-    # devtools & ai
+    # devtools
     ripgrep
     fd
     dust
@@ -193,6 +208,8 @@
     # some gnome stuff
     wordbook
     cartridges
+    gnome-network-displays
+    amberol
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
