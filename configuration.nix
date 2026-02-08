@@ -78,12 +78,21 @@
   # auto store optimization
   nix.settings.auto-optimise-store = true;
 
+  # # power optimization
+  # powerManagement.powertop.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   services.gnome = {
     games.enable = true;
   };
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      totem
+    ]
+  );
   qt.platformTheme = "gnome";
 
   # Configure keymap in X11
@@ -101,7 +110,6 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-
 
   programs.kdeconnect = {
     enable = true;
@@ -210,6 +218,7 @@
     cartridges
     gnome-network-displays
     amberol
+    celluloid
   ];
 
   # bluetooth stuff
