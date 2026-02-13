@@ -206,6 +206,8 @@
     imagemagick
     nixfmt
     davinci-resolve
+    nh
+    nil
     # devtools
     ripgrep
     fd
