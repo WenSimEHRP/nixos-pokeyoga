@@ -147,7 +147,10 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-beta;
+  };
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;
