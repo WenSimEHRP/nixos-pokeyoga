@@ -93,7 +93,11 @@
       totem
     ]
   );
-  qt.platformTheme = "gnome";
+  qt = {
+    enable = true;
+    style = "adwaita";
+    platformTheme = "gnome";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -147,7 +151,10 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+  };
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;
@@ -187,9 +194,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # theming related
     adw-gtk3
+    qadwaitadecorations
+    qadwaitadecorations-qt6
+    adwaita-qt
     adwaita-qt6
     morewaita-icon-theme
+    # sys utils
     wget
     gitui
     waydroid-helper
@@ -217,10 +229,12 @@
     jjui
     # some gnome stuff
     wordbook
-    cartridges
+    lutris
     gnome-network-displays
     amberol
     celluloid
+    # development use
+    ungoogled-chromium
   ];
 
   # bluetooth stuff

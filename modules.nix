@@ -58,5 +58,6 @@
     XMODIFIERS = "@im=fcitx";
     SDL_IM_MODULE = "fcitx";
     GLFW_IM_MODULE = "ibus";
+    QT_WAYLAND_DECORATION = "adwaita";
   };
 }
