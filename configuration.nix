@@ -60,6 +60,9 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
+  i18n.extraLocales = [
+    "ja_JP.UTF-8/UTF-8"
+  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -210,6 +213,7 @@
     amberol
     cine
     gnome-sound-recorder
+    gradia
     # development use
     ungoogled-chromium
   ];
