@@ -215,7 +215,7 @@
     gnome-sound-recorder
     gradia
     # development use
-    ungoogled-chromium
+    google-chrome
   ];
 
   # bluetooth stuff
