@@ -62,6 +62,7 @@
   i18n.defaultLocale = "en_CA.UTF-8";
   i18n.extraLocales = [
     "ja_JP.UTF-8/UTF-8"
+    "zh_CN.UTF-8/UTF-8"
   ];
 
   # Enable the X11 windowing system.
@@ -214,8 +215,10 @@
     cine
     gnome-sound-recorder
     gradia
+    newsflash
     # development use
     google-chrome
+    cups-pdf-to-pdf
   ];
 
   # bluetooth stuff
