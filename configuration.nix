@@ -199,6 +199,7 @@
     nixfmt
     nh
     nixd
+    atuin
     # devtools
     ripgrep
     fd
