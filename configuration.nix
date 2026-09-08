@@ -56,7 +56,7 @@
   # ];
 
   # Set your time zone.
-  time.timeZone = "America/Vancouver";
+  time.timeZone = "America/Edmonton";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -144,6 +144,7 @@
   # firmware settings
   hardware.enableRedistributableFirmware = true;
 
+  # XTRA RAM!
   zramSwap.enable = true;
 
   services.flatpak.enable = true;
@@ -192,7 +193,7 @@
     gh
     zed-editor-fhs
     refine
-    aseprite
+    # aseprite
     krita
     qq
     imagemagick
@@ -222,6 +223,8 @@
     # development use
     google-chrome
     cups-pdf-to-pdf
+    bubblewrap
+    typst
   ];
 
   # bluetooth stuff
