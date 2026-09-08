@@ -6,7 +6,13 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-hardware,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -15,7 +21,8 @@
           allowUnfree = true;
         };
       };
-    in {
+    in
+    {
       nixosConfigurations.pokeyoga = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
         modules = [
